@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tempat Wisata</title>
+    <style>
+      :root {
+        --sc: "Space Crusaders", sans-serif;
+        --mh: "Michroma", sans-serif;
+        --orb: "Orbitron", sans-serif;
+      }
+
+      ::-webkit-scrollbar {
+        width: 5px;
+      }
+
+      ::-webkit-scrollbar-track {
+        background: transparent;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background-color: #fff;
+      }
+
+      * {
+        padding: 0;
+        margin: 0;
+        text-decoration: none;
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        background-color: black;
+        color: #fff;
+        font-family: var(--mh);
+      }
+
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: fixed;
+        background-color: rgba(1, 1, 1, 0.1);
+        top: 0;
+        left: 0;
+        right: 0;
+        padding: 10px 20px;
+        z-index: 9999;
+      }
+
+      header .logo {
+        display: flex;
+        align-items: center;
+      }
+
+      header .logo img {
+        filter: brightness(1000%);
+        width: 70px;
+      }
+
+      header .logo a {
+        font-size: 13px;
+        color: #fff;
+      }
+
+      main {
+        display: flex;
+        flex-direction: column;
+        padding-top: 5rem; /* Space for fixed header */
+      }
+
+      .hero {
+        position: relative;
+        overflow: hidden;
+        height: 400px; /* Set a height for the hero section */
+      }
+
+      .hero video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Cover the entire area */
+        z-index: 1; /* Send video to the back */
+      }
+
+      .hero .content {
+        position: relative;
+        z-index: 2; /* Bring content to the front */
+        text-align: center;
+        padding: 20px;
+      }
+
+      .tourist-places {
+        padding: 2rem 5%;
+        text-align: center;
+      }
+
+      .tourist-places h2 {
+        font-family: var(--orb);
+        font-size: 2.5rem;
+        margin-bottom: 2rem;
+        color: #fff;
+      }
+
+      .card-container {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        flex-wrap: wrap;
+      }
+
+      .card {
+        background-color: rgba(255, 255, 255, 0.1);
+        border: 1px solid #fff;
+        border-radius: 10px;
+        padding: 1.5rem;
+        width: 250px;
+        transition: transform 0.3s;
+        text-align: center; /* Center text */
+      }
+
+      .card h3 {
+        font-family: var(--mh);
+        font-size: 1.5rem;
+        color: #fff;
+        margin-bottom: 1rem;
+      }
+
+      .card p {
+        font-family: var(--mh);
+        font-size: 0.9rem;
+        color: #fff;
+      }
+
+      .card:hover {
+        transform: scale(1.05);
+      }
+
+      .card-image {
+        width: 100%; /* Full width */
+        height: 150px; /* Fixed height */
+        object-fit: cover; /* Maintain aspect ratio */
+        border-radius: 10px; /* Rounded corners */
+        margin-bottom: 1rem; /* Space between image and text */
+      }
+
+      .view-button {
+        background-color: #fff;
+        color: black;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 15px;
+        cursor: pointer;
+        transition: background-color 0.3s, color 0.3s;
+        font-size: 14px;
+      }
+
+      .view-button:hover {
+        background-color: #00e5ff;
+        color: #fff;
+      }
+
+      footer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        margin-top: 3rem;
+        height: 10vh;
+      }
+
+      footer .social {
+        display: flex;
+        gap: 1rem;
+      }
+
+      footer .social a {
+        color: #fff;
+        transition: 0.2s linear;
+      }
+
+      footer .social a:hover {
+        color: #878787;
+      }
+
+      footer .extra p {
+        font-family: var(--mh);
+        font-size: 13px;
+      }
+
+      @media (max-width: 768px) {
+        .card-container {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .card {
+          width: 90%; /* Full width on smaller screens */
+        }
+
+        header {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        header .logo {
+          margin-bottom: 10px;
+        }
+
+        .hero {
+          height: 300px; /* Adjust height for smaller screens */
+        }
+
+        .hero h2 {
+          font-size: 2rem; /* Adjust font size for smaller screens */
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <img src="img/logos.png" width="75" />
+        <a href="">Apakek</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <video src="video/earth.mp4" autoplay loop muted></video>
+        <div class="content">
+          <h2>Tempat Ngelamun</h2>
+          <div class="card-container">
+            <div class="card">
+              <img src="img/img-1.jpg" alt="Pantai" class="card-image" />
+              <h3>Pantai</h3>
+              <p>Tempat Ngelamun</p>
+              <a href="pantai.html">
+                <button class="view-button">Click Me</button>
+              </a>
+            </div>
+            <div class="card">
+              <img src="img/img-2.jpg" alt="Gunung" class="card-image" />
+              <h3>Gunung</h3>
+              <p>Tempat Ngelamun</p>
+              <a href="gunung.html">
+                <button class="view-button">Click Me</button>
+              </a>
+            </div>
+            <div class="card">
+              <img src="img/img-3.jpg" alt="Waduk" class="card-image" />
+              <h3>Sunset Danau</h3>
+              <p>Tempat Ngelamun</p>
+              <a href="waduk.html">
+                <button class="view-button">Click Me</button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

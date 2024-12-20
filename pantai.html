@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Text Effect</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column; /* Allow vertical stacking */
+        justify-content: center;
+        align-items: center;
+        background: #030517;
+        color: white; /* Set default text color */
+      }
+
+      svg {
+        width: 100%;
+        height: 100%;
+        font-family: "Raleway", sans-serif;
+      }
+
+      svg text {
+        text-transform: uppercase;
+        font-size: 5rem;
+        animation: stroke 5s infinite alternate;
+        fill: none; /* Ensure the text is not filled */
+        stroke: white; /* Set the stroke color */
+        stroke-width: 0; /* Initial stroke width */
+      }
+
+      @keyframes stroke {
+        0% {
+          stroke-width: 0;
+          stroke-dashoffset: 25%;
+          stroke-dasharray: 0 50%;
+        }
+        70% {
+          stroke: white;
+        }
+        80% {
+          stroke: white;
+          stroke-width: 3;
+        }
+        100% {
+          stroke-width: 0;
+          stroke-dashoffset: -25%;
+          stroke-dasharray: 50% 0;
+        }
+      }
+
+      /* New styles for the card section */
+      .card-section {
+        padding: 2rem;
+        text-align: center;
+        background-color: #030517; /* Dark background for contrast */
+        width: 100%;
+      }
+
+      .card-container {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 1.5rem; /* Space between cards */
+      }
+
+      .card {
+        background-color: rgba(255, 255, 255, 0.1);
+        border: 1px solid #fff;
+        border-radius: 10px;
+        padding: 1rem;
+        width: 250px; /* Fixed width for cards */
+        transition: transform 0.3s;
+      }
+
+      .card img {
+        width: 100%; /* Full width */
+        height: 150px; /* Fixed height */
+        object-fit: cover; /* Maintain aspect ratio */
+        border-radius: 10px; /* Rounded corners */
+      }
+
+      .card h3 {
+        margin: 1rem 0;
+        font-size: 1.5rem;
+      }
+
+      .card p {
+        font-size: 0.9rem;
+      }
+
+      .card:hover {
+        transform: scale(1.05); /* Scale effect on hover */
+      }
+
+      /* Media Queries for Responsiveness */
+      @media (max-width: 768px) {
+        svg text {
+          font-size: 3rem; /* Adjust font size for smaller screens */
+        }
+
+        .card {
+          width: 90%; /* Full width on smaller screens */
+        }
+
+        .card-container {
+          flex-direction: column; /* Stack cards vertically on small screens */
+          align-items: center; /* Center cards */
+        }
+
+        .card img {
+          height: 120px; /* Adjust image height for smaller screens */
+        }
+
+        .card h3 {
+          font-size: 1.2rem; /* Adjust heading size */
+        }
+
+        .card p {
+          font-size: 0.8rem; /* Adjust paragraph size */
+        }
+      }
+
+      @media (max-width: 480px) {
+        svg text {
+          font-size: 2.5rem; /* Further adjust font size for very small screens */
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <svg viewBox="0 0 1320 300">
+      <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle">
+        PANTAI
+      </text>
+    </svg>
+
+    <section class="card-section">
+      <h2>
+        Mana Yang Belum Pernah? Ini sebagian ya, Sebenernya masih banyak lagi
+      </h2>
+      <div class="card-container">
+        <div class="card">
+          <img src="img/kedu.jpg" alt="Pantai" />
+          <h3>Pantai Kedu</h3>
+          <p>Ini Kalianda Kota</p>
+        </div>
+        <div class="card">
+          <img src="img/sanggar.jpg" alt="Gunung" />
+          <h3>Pantai Sanggar</h3>
+          <p>Sama ini juga kalianda kota</p>
+        </div>
+        <div class="card">
+          <img src="img/marina.jpg" alt="Waduk" />
+          <h3>Pantai Marina</h3>
+          <p>Ini juga sama si cuma aga masuk</p>
+        </div>
+        <div class="card">
+          <img src="img/mbech.jpg" alt="Waduk" />
+          <h3>Pantai M-Becach</h3>
+          <p>
+            Ini Kalianda satu jalan sama kalianda resort( deket daripada yang
+            lain)
+          </p>
+        </div>
+        <div class="card">
+          <img src="img/bagus.jpg" alt="Waduk" />
+          <h3>Pantai Bagus</h3>
+          <p>Ini Sampingan sama M-Beach</p>
+        </div>
+        <div class="card">
+          <img src="img/laguna.jpg" alt="Waduk" />
+          <h3>Pantai Laguna Gayau</h3>
+          <p>Ini jauh tanggamus jalan jelek tapi tmpt bagus</p>
+        </div>
+        <div class="card">
+          <img src="img/karangputih.jpg" alt="Waduk" />
+          <h3>Pantai Karang Putih</h3>
+          <p>Sama ini juga Tanggamus Tapi Bagus . mines banyak anjing</p>
+        </div>
+        <div class="card">
+          <img src="img/gigihiu.jpg" alt="Waduk" />
+          <h3>Pantai Gigi Hiu</h3>
+          <p>
+            Ini Juga bagus, sama tanggamus dlu jalannya jelek gatau sekarang
+            paling sama
+          </p>
+        </div>
+        <div class="card">
+          <img src="img/wtc.jpg" alt="Waduk" />
+          <h3>Way Tebbing Ceppa</h3>
+          <p>Ini Tmpt mata air gunung rajabasa</p>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
